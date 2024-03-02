@@ -32,9 +32,11 @@ function Login() {
           </small>
           <div className="border-b w-full h-[1px]"></div>
         </div>
-        <Button className="w-3/5" variant="outline">
-          {t("Create an account")}
-        </Button>
+        <a className="w-3/5" href="/register">
+          <Button className="w-full" variant="outline">
+            {t("Create an account")}
+          </Button>
+        </a>
       </div>
     </div>
   );

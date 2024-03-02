@@ -1,10 +1,8 @@
-import React from "react";
-import { Input } from "../ui/input";
-import { Button } from "../ui/button";
 import illustration from "../../svg/auth-illustration.svg";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
 
 import { useTranslation } from "react-i18next";
-import { Separator } from "@radix-ui/react-separator";
 
 function Register() {
   const { t, i18n } = useTranslation();
@@ -30,9 +28,11 @@ function Register() {
           </small>
           <div className="border-b w-full h-[1px]"></div>
         </div>
-        <Button className="w-3/5" variant="outline">
-          {t("Login")}
-        </Button>
+        <a className="w-3/5" href="/login">
+          <Button className="w-full" variant="outline">
+            {t("Login")}
+          </Button>
+        </a>
       </div>
     </div>
   );

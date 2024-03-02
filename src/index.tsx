@@ -1,40 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "./components/authentification/Login";
+import Register from "./components/authentification/Register";
+import Error404 from "./components/error/404";
+import AdminDashboard from "./components/admin/dashboard/Dashboard";
+import "./i18n";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login from "./components/authentification/Login";
-import "./i18n";
-import Register from "./components/authentification/register";
-import Error404 from "./components/error/404";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <div>Hello world!</div>,
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/register",
-    element: <Register />,
-  },
-  {
-    path: "/*",
-    element: <Error404 />,
-  },
-]);
-
 root.render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <BrowserRouter>
+    <Routes>
+      {/* Public */}
+      <Route path="/" element={<div>Hello world!</div>} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+
+      {/* Super Admin Routes */}
+      <Route path="/dashboard" element={<AdminDashboard />} />
+
+      {/* 404 Error */}
+      <Route path="/*" element={<Error404 />} />
+    </Routes>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
