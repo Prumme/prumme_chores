@@ -15,7 +15,7 @@ function AdminDashboard() {
   const { t, i18n } = useTranslation();
 
   return (
-    <div className="h-screen py-8 px-10">
+    <div className="h-full relative top-0 px-10">
       <h1 className="text-2xl font-bold font-title ">Dashboard</h1>
       <div className="my-12">
         <Tabs defaultValue="overview" className="w-[400px]">

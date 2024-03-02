@@ -7,6 +7,7 @@ import AdminDashboard from "./components/admin/dashboard/Dashboard";
 import "./i18n";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
+import Dashboard from "./components/dashboard/Dashboard";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -21,7 +22,9 @@ root.render(
       <Route path="/register" element={<Register />} />
 
       {/* Super Admin Routes */}
-      <Route path="/dashboard" element={<AdminDashboard />} />
+      <Route path="/" element={<Dashboard />}>
+        <Route path="dashboard" element={<AdminDashboard />} />
+      </Route>
 
       {/* 404 Error */}
       <Route path="/*" element={<Error404 />} />
