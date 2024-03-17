@@ -1,36 +1,24 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import {
+  format as formatDate,
+  formatRelative,
+  formatDistance,
+  isDate,
+} from "date-fns";
+import { enUS, fr } from "date-fns/locale";
+
+import enUSJSON from "./translations/enUS.json";
+import frJSON from "./translations/fr.json";
+
+const locales = { enUS, fr };
 
 // the translations
 // (tip move them in a JSON file and import them,
 // or even better, manage them separated from your code: https://react.i18next.com/guides/multiple-translation-files)
 const resources = {
-  en: {
-    translation: {
-      Connection: "Connection",
-      Login: "Login",
-      Register: "Register",
-      "Do you have an account": "Do you have an account",
-      "Are you new?": "Are you new?",
-      "Create an account": "Create an account",
-      "Are you lost?": "Are you lost?",
-      "404 - Page Not Found": "404 - Page Not Found",
-      "Get back to safe place": "Get back to safe place",
-    },
-  },
-  fr: {
-    translation: {
-      Connection: "Connexion",
-      Login: "Se connecter",
-      Register: "S'inscrire",
-      "Do you have an account": "Vous avez déjà un Compte",
-      "Are you new?": "Vous êtes nouveau ?",
-      "Create an account": "Créer un compte",
-      "Are you lost?": "Êtes vous perdu ?",
-      "404 - Page Not Found": "404 - Page Introuvable",
-      "Get back to safe place": "Revenir en lieu sûr",
-    },
-  },
+  enUS: { ...enUSJSON },
+  fr: { ...frJSON },
 };
 
 i18n
@@ -43,6 +31,24 @@ i18n
 
     interpolation: {
       escapeValue: false, // react already safes from xss
+
+      format: (value, format, lng) => {
+        if (isDate(value)) {
+          const locale = locales[lng];
+
+          if (format === "short") return formatDate(value, "P", { locale });
+          if (format === "long") return formatDate(value, "PPPP", { locale });
+          if (format === "relative")
+            return formatRelative(value, new Date(), { locale });
+          if (format === "ago")
+            return formatDistance(value, new Date(), {
+              locale,
+              addSuffix: true,
+            });
+
+          return formatDate(value, format, { locale });
+        }
+      },
     },
   });
 

@@ -1,0 +1,34 @@
+{
+  "translation": {
+    "dates": {
+      "long": "{{ date, long }}"
+    },
+    "Connection": "Connexion",
+    "Login": "Se connecter",
+    "Register": "S'inscrire",
+    "Do you have an account": "Vous avez déjà un Compte",
+    "Are you new?": "Vous êtes nouveau ?",
+    "Create an account": "Créer un compte",
+    "Are you lost?": "Êtes vous perdu ?",
+    "404 - Page Not Found": "404 - Page Introuvable",
+    "Get back to safe place": "Revenir en lieu sûr",
+    "Family/Group name": "Nom de la Famille/Groupe",
+    "Creator's email": "Email du créateur",
+    "Type": "Type",
+    "Forfeit": "Forfait",
+    "Registration Date": "Date d'inscription",
+    "Actions": "Actions",
+    "family": "famille",
+    "flatsharing": "colocation",
+    "free": "gratuit",
+    "subscription": "abonnement",
+    "purchased": "acheté",
+    "Copy ID": "Copier l'ID",
+    "View customer": "Voir le client",
+    "View payment details": "Voir les détails du paiement",
+    "Overview": "Aperçu",
+    "Analytics": "Analytique",
+    "Users": "Utilisateurs",
+    "Notifications": "Notifications"
+  }
+}

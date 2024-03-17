@@ -12,7 +12,7 @@ function Login() {
   return (
     <div className="h-screen grid grid-cols-1 lg:grid-cols-2 py-36">
       <div className="h-full relative hidden lg:flex flex-col items-center justify-center border-r border-primary">
-        <h1 className="absolute top-4 text-3xl font-title">Prumme Chores</h1>
+        <h1 className="absolute top-4 text-3xl font-title">Makitklean</h1>
         <img className="w-4/5 " src={illustration} alt="Illustration"></img>
       </div>
 

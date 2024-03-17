@@ -18,13 +18,15 @@ function AdminDashboard() {
     <div className="h-full relative top-0 px-10">
       <h1 className="text-2xl font-bold font-title ">Dashboard</h1>
       <div className="my-12">
-        <Tabs defaultValue="overview" className="w-[400px]">
+        <Tabs defaultValue="overview">
           <TabsList>
-            <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="analytics">Analytics</TabsTrigger>
-            <TabsTrigger value="users">Users</TabsTrigger>
-            <TabsTrigger value="notifications">Notifications</TabsTrigger>
-            <TabsTrigger value="actions">Actions</TabsTrigger>
+            <TabsTrigger value="overview">{t("Overview")}</TabsTrigger>
+            <TabsTrigger value="analytics">{t("Analytics")}</TabsTrigger>
+            <TabsTrigger value="users">{t("Users")}</TabsTrigger>
+            <TabsTrigger value="notifications">
+              {t("Notifications")}
+            </TabsTrigger>
+            <TabsTrigger value="actions">{t("Actions")}</TabsTrigger>
           </TabsList>
           <TabsContent value="overview">
             <AdminDashboardOverview />
